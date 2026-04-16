@@ -752,6 +752,44 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ===== REFERENCES ===== */
+.partners-logo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.partner-logo-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: 12px;
+  padding: 1.25rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  height: 80px;
+  transition: all 0.25s ease;
+  filter: grayscale(40%);
+}
+.partner-logo-card:hover {
+  filter: grayscale(0%);
+  border-color: var(--blue-accent);
+  box-shadow: 0 6px 20px rgba(107,189,227,0.12);
+  transform: translateY(-2px);
+}
+
+.partner-logo-card img {
+  max-width: 140px;
+  max-height: 48px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
 .partners-strip {
   display: flex;
   gap: 1.5rem;

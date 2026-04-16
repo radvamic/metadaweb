@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" width="220" height="60">
+  <rect width="220" height="60" fill="white" rx="6"/>
+  <rect x="18" y="14" width="4" height="32" fill="#1B2A4A" rx="2"/>
+  <rect x="26" y="14" width="4" height="32" fill="#6BBDE3" rx="2"/>
+  <text x="40" y="27" font-family="Arial, sans-serif" font-size="10" font-weight="800" fill="#1B2A4A" letter-spacing="0.5">CZECH WEALTHTECH</text>
+  <text x="40" y="43" font-family="Arial, sans-serif" font-size="10" font-weight="600" fill="#6BBDE3" letter-spacing="0.5">ASSOCIATION</text>
+</svg>
