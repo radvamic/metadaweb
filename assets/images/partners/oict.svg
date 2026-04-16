@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
   <rect width="200" height="60" fill="white" rx="6"/>
   <circle cx="22" cy="30" r="12" fill="#003F7F" opacity="0.9"/>
