@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metada — Enterprise No-Code Platform</title>
+  <meta name="description" content="Metada Core Platform — jedna platforma, deset produktů. No-code engine pro regulovaná enterprise prostředí.">
+  <meta property="og:title" content="Metada — Enterprise No-Code Platform">
+  <meta property="og:description" content="Jedna platforma. Deset produktů. Žádný vendor lock-in.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#1B2A4A">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1B2A4A',
+            'navy-light': '#243656',
+            accent: '#6BBDE3',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body>
+
+<!-- Scroll Progress -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="mobileClose" aria-label="Close menu">✕</button>
+  <a href="#about" data-i18n="nav.about" class="mobile-link">O Metadě</a>
+  <a href="#products" data-i18n="nav.products" class="mobile-link">Produkty</a>
+  <a href="#platform" data-i18n="nav.platform" class="mobile-link">Platforma</a>
+  <a href="#ai" data-i18n="nav.ai" class="mobile-link">AI strategie</a>
+  <a href="#references" data-i18n="nav.references" class="mobile-link">Reference</a>
+  <a href="#contact" data-i18n="nav.contact" class="mobile-link">Kontakt</a>
+  <button class="lang-toggle" id="mobileLangBtn">EN</button>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <div class="container flex items-center justify-between">
+    <a href="#" class="navbar-logo">
+      <img src="assets/images/logos/logo-horizontal-white.png" alt="Metada" id="navLogoLight">
+    </a>
+    <div class="nav-links flex items-center gap-8" id="navLinks">
+      <a href="#about" data-i18n="nav.about">O Metadě</a>
+      <a href="#products" data-i18n="nav.products">Produkty</a>
+      <a href="#platform" data-i18n="nav.platform">Platforma</a>
+      <a href="#ai" data-i18n="nav.ai">AI strategie</a>
+      <a href="#references" data-i18n="nav.references">Reference</a>
+      <a href="#contact" data-i18n="nav.contact">Kontakt</a>
+      <button class="lang-toggle" id="langBtn">EN</button>
+    </div>
+    <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">☰</button>
+  </div>
+</nav>
+
+<!-- ===== SECTION 1: HERO ===== -->
+<section class="hero" id="hero">
+  <video class="hero-video" autoplay muted loop playsinline preload="auto">
+    <source src="assets/video/hero-bg.mp4" type="video/mp4">
+  </video>
+  <canvas class="hero-canvas" id="heroCanvas"></canvas>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-badge" data-i18n="hero.badge">
+      Česká platforma · 20+ let vývoje · Enterprise no-code
+    </div>
+    <h1 class="hero-title">
+      <span class="line" data-i18n="hero.title1">Jedna platforma.</span>
+      <span class="line" data-i18n="hero.title2">Deset produktů.</span>
+      <span class="line accent" data-i18n="hero.title3">Žádný vendor lock-in.</span>
+    </h1>
+    <p class="hero-subtitle" data-i18n="hero.subtitle">
+      Metada Core Platform — no-code engine pro komplexní enterprise systémy v regulovaných prostředích.
+    </p>
+    <div class="hero-buttons">
+      <a href="#products" class="btn-primary" data-i18n="hero.cta1">Prozkoumat produkty</a>
+      <a href="#contact" class="btn-secondary" data-i18n="hero.cta2">Domluvit demo</a>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ===== SECTION 2: O METADĚ ===== -->
+<section class="section section-gray" id="about">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-label" data-i18n="about.label">O METADĚ</span>
+      <div class="section-divider"></div>
+      <h2 class="section-title" data-i18n="about.title">Nejsme další vendor. Jsme platforma.</h2>
+    </div>
+
+    <div class="stats-row" data-aos="fade-up" data-aos-delay="100">
+      <div class="stat-item">
+        <div class="stat-value" data-i18n="about.stat1.value">20+</div>
+        <div class="stat-label" data-i18n="about.stat1.label">let vývoje</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" data-i18n="about.stat2.value">10</div>
+        <div class="stat-label" data-i18n="about.stat2.label">produktových vertikál</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" data-i18n="about.stat3.value">100%</div>
+        <div class="stat-label" data-i18n="about.stat3.label">no-code</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-value" data-i18n="about.stat4.value">0</div>
+        <div class="stat-label" data-i18n="about.stat4.label">vendor lock-in</div>
+      </div>
+    </div>
+
+    <p class="about-manifesto" data-aos="fade-up" data-aos-delay="200" data-i18n="about.text">
+      Banky, úřady a pojišťovny si na Metadě staví vlastní řešení — bez kódu, bez závislosti na dodavateli, bez technického dluhu. Jedno sdílené jádro pohání deset specializovaných produktů.
+    </p>
+  </div>
+</section>
+
+<!-- ===== SECTION 3: PRODUKTOVÉ PORTFOLIO ===== -->
+<section class="section section-dark" id="products">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-label" data-i18n="products.label">PRODUKTY</span>
+      <div class="section-divider"></div>
+      <h2 class="section-title" data-i18n="products.title">Jedno jádro. Deset specializovaných produktů.</h2>
+      <p class="section-subtitle mx-auto mt-4" data-i18n="products.subtitle">
+        Sdílené R&D investice, cílený sales pitch, až 8× nižší náklady na akvizici.
+      </p>
+    </div>
+
+    <div class="products-grid" data-aos="fade-up" data-aos-delay="100">
+
+      <!-- MetadaBank -->
+      <div class="product-card">
+        <div class="product-priority" data-i18n="products.priority">Prioritní</div>
+        <div class="product-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M4 20V10l8-6 8 6v10M10 20v-5h4v5"/></svg>
+        </div>
+        <div class="product-name" data-i18n="product.bank.name">MetadaBank</div>
+        <div class="product-domain" data-i18n="product.bank.domain">Bankovnictví</div>
+        <div class="product-desc" data-i18n="product.bank.desc">Komplexní bankovní platforma pro KYC, úvěry, AML a regulatorní reporting.</div>
+        <a href="#verticals" class="product-link" data-i18n="products.cta">Zjistit více →</a>
+      </div>
+
+      <!-- MetadaGov -->
+      <div class="product-card">
+        <div class="product-priority" data-i18n="products.priority">Prioritní</div>
+        <div class="product-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M12 13v9M9 22h6"/><path d="M3 13h18"/></svg>
+        </div>
+        <div class="product-name" data-i18n="product.gov.name">MetadaGov</div>
+        <div class="product-domain" data-i18n="product.gov.domain">Veřejná správa</div>
+        <div class="product-desc" data-i18n="product.gov.desc">Digitalizace úřadů — životní situace, spisová služba, dotace, portál občana.</div>
+        <a href="#verticals" class="product-link" data-i18n="products.cta">Zjistit více →</a>
+      </div>
+
+      <!-- MetadaCompliance -->
+      <div class="product-card">
+        <div class="product-priority" data-i18n="products.priority">Prioritní</div>
+        <div class="product-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="product-name" data-i18n="product.compliance.name">MetadaCompliance</div>
+        <div class="product-domain" data-i18n="product.compliance.domain">Compliance</div>
+        <div class="product-desc" data-i18n="product.compliance.desc">Řízení regulatorních požadavků — GDPR, DORA, NIS2, audit trail.</div>
+        <a href="#verticals" class="product-link" data-i18n="products.cta">Zjistit více →</a>
+      </div>
+
+      <!-- MetadaInsurance -->
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <div class="product-name" data-i18n="product.insurance.name">MetadaInsurance</div>
+        <div class="product-domain" data-i18n="product.insurance.domain">Pojišťovnictví</div>
+        <div class="product-desc" data-i18n="product.insurance.desc">Policy management, claims, underwriting a regulatorní reporting.</div>
+        <a href="#contact" class="product-link" data-i18n="products.cta">Zjistit více →</a>
+      </div>
+
+      <!-- MetadaHR -->
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <div class="product-name" data-i18n="product.hr.name">MetadaHR</div>
+        <div class="product-domain" data-i18n="product.hr.domain">Lidské zdroje</div>
+        <div class="product-desc" data-i18n="product.hr.desc">Nábor, onboarding, hodnocení, OKR — HR procesy bez kompromisů.</div>
+        <a href="#contact" class="product-link" data-i18n="products.cta">Zjistit více →</a>
+      </div>
+
+      <!-- MetadaCRM -->
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        </div>
+        <div class="product-name" data-i18n="product.crm.name">MetadaCRM</div>
+        <div class="product-domain" data-i18n="product.crm.domain">CRM</div>
+        <div class="product-desc" data-i18n="product.crm.desc">CRM engine pro složité obchodní procesy, které Salesforce nezvládne.</div>
+        <a href="#contact" class="product-link" data-i18n="products.cta">Zjistit více →</a>
+      </div>
+
+      <!-- MetadaLogistics -->
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+        </div>
+        <div class="product-name" data-i18n="product.logistics.name">MetadaLogistics</div>
+        <div class="product-domain" data-i18n="product.logistics.domain">Logistika</div>
+        <div class="product-desc" data-i18n="product.logistics.desc">Inventory, příjem, expedice a WMS přizpůsobené vašim procesům.</div>
+        <a href="#contact" class="product-link" data-i18n="products.cta">Zjistit více →</a>
+      </div>
+
+      <!-- MetadaAccounting -->
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <div class="product-name" data-i18n="product.accounting.name">MetadaAccounting</div>
+        <div class="product-domain" data-i18n="product.accounting.domain">Účetnictví</div>
+        <div class="product-desc" data-i18n="product.accounting.desc">Hlavní kniha, fakturace, DPH, majetek a konsolidace bez technického dluhu.</div>
+        <a href="#contact" class="product-link" data-i18n="products.cta">Zjistit více →</a>
+      </div>
+
+      <!-- MetadaPM -->
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div class="product-name" data-i18n="product.pm.name">MetadaPM</div>
+        <div class="product-domain" data-i18n="product.pm.domain">Projektové řízení</div>
+        <div class="product-desc" data-i18n="product.pm.desc">Backlog, sprint, roadmap a release management pro SW i consulting firmy.</div>
+        <a href="#contact" class="product-link" data-i18n="products.cta">Zjistit více →</a>
+      </div>
+
+      <!-- MetadaResource -->
+      <div class="product-card">
+        <div class="product-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="product-name" data-i18n="product.resource.name">MetadaResource</div>
+        <div class="product-domain" data-i18n="product.resource.domain">Plánování zdrojů</div>
+        <div class="product-desc" data-i18n="product.resource.desc">Resource pool, alokace, timesheety a fakturační předpis z odpracovaného času.</div>
+        <a href="#contact" class="product-link" data-i18n="products.cta">Zjistit více →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 4: CORE PLATFORM ===== -->
+<section class="section" id="platform">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-label" data-i18n="core.label">METADA CORE PLATFORM</span>
+      <div class="section-divider"></div>
+      <h2 class="section-title" data-i18n="core.title">Motor za vším</h2>
+      <p class="section-subtitle mx-auto mt-4" data-i18n="core.subtitle">
+        Každý produkt sdílí stejné jádro. R&D investice se neopakují. Zákazník dostane doménové řešení postavené na dvaceti letech vývoje.
+      </p>
+    </div>
+
+    <div class="core-diagram" data-aos="fade-up" data-aos-delay="100">
+      <!-- Center -->
+      <div class="core-center">
+        <div class="core-badge">
+          <div class="core-badge-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="core-badge-text">
+            <div class="label">Core Engine</div>
+            <div class="name">Metada Core Platform</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Connector -->
+      <div class="connector-row">
+        <div class="connector-dot"></div>
+      </div>
+
+      <!-- Pillars -->
+      <div class="core-pillars">
+        <div class="pillar-card" data-aos="fade-up" data-aos-delay="150">
+          <div class="pillar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+          </div>
+          <div class="pillar-name" data-i18n="core.engine">No-code engine</div>
+          <div class="pillar-desc" data-i18n="core.engine.desc">Vizuální modelování celé aplikace bez kódu.</div>
+        </div>
+        <div class="pillar-card" data-aos="fade-up" data-aos-delay="200">
+          <div class="pillar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="pillar-name" data-i18n="core.workflow">Workflow</div>
+          <div class="pillar-desc" data-i18n="core.workflow.desc">Konfigurovatelné schvalovací procesy a business pravidla.</div>
+        </div>
+        <div class="pillar-card" data-aos="fade-up" data-aos-delay="250">
+          <div class="pillar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg>
+          </div>
+          <div class="pillar-name" data-i18n="core.data">Data modelling</div>
+          <div class="pillar-desc" data-i18n="core.data.desc">Flexibilní datový model přizpůsobený libovolné doméně.</div>
+        </div>
+        <div class="pillar-card" data-aos="fade-up" data-aos-delay="300">
+          <div class="pillar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </div>
+          <div class="pillar-name" data-i18n="core.integrations">Integrace</div>
+          <div class="pillar-desc" data-i18n="core.integrations.desc">API, datové schránky, eGov, bankovní systémy.</div>
+        </div>
+        <div class="pillar-card" data-aos="fade-up" data-aos-delay="350">
+          <div class="pillar-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div class="pillar-name" data-i18n="core.ui">UI builder</div>
+          <div class="pillar-desc" data-i18n="core.ui.desc">Responzivní UI modelované ve stejném prostředí jako logika.</div>
+        </div>
+      </div>
+
+      <div class="core-note mt-10" data-aos="fade-up" data-aos-delay="400" data-i18n="core.note">
+        Jedno jádro. Žádný technický dluh. Plná auditovatelnost.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 5: AI STRATEGIE ===== -->
+<section class="section section-gradient" id="ai">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-label" data-i18n="ai.label">AI & BUDOUCNOST</span>
+      <div class="section-divider"></div>
+      <h2 class="section-title" data-i18n="ai.title">AI generuje kód. Metada generuje systémy.</h2>
+      <p class="section-subtitle mx-auto mt-4" data-i18n="ai.subtitle">
+        AI a Metada nejsou konkurenti — jsou to komplementární přístupy.
+      </p>
+    </div>
+
+    <div class="ai-grid mt-12">
+      <!-- Comparison Table -->
+      <div data-aos="fade-right" data-aos-delay="100">
+        <table class="ai-table">
+          <thead>
+            <tr>
+              <th data-i18n="ai.col.aspect">Aspekt</th>
+              <th data-i18n="ai.col.ai">AI / Vibe coding</th>
+              <th data-i18n="ai.col.metada">Metada</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-i18n="ai.row1.aspect">Kvalita</td>
+              <td data-i18n="ai.row1.ai">Proměnlivá; AI agenti lžou o testech</td>
+              <td data-i18n="ai.row1.metada">Model = konzistentní zdroj pravdy</td>
+            </tr>
+            <tr>
+              <td data-i18n="ai.row2.aspect">Bezpečnost</td>
+              <td data-i18n="ai.row2.ai">Veřejné DB, chybějící auth</td>
+              <td data-i18n="ai.row2.metada">Security model je součást platformy</td>
+            </tr>
+            <tr>
+              <td data-i18n="ai.row3.aspect">Udržitelnost</td>
+              <td data-i18n="ai.row3.ai">Technický dluh od prvního dne</td>
+              <td data-i18n="ai.row3.metada">Model se mění vizuálně, bez dluhu</td>
+            </tr>
+            <tr>
+              <td data-i18n="ai.row4.aspect">Compliance</td>
+              <td data-i18n="ai.row4.ai">Kdo audituje AI kód?</td>
+              <td data-i18n="ai.row4.metada">Auditovatelný, verzovatelný model</td>
+            </tr>
+            <tr>
+              <td data-i18n="ai.row5.aspect">Konzistence</td>
+              <td data-i18n="ai.row5.ai">Různé prompty = různý kód</td>
+              <td data-i18n="ai.row5.metada">Stejný model = stejná aplikace</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Roadmap -->
+      <div data-aos="fade-left" data-aos-delay="150">
+        <div class="ai-roadmap-title" data-i18n="ai.roadmap.title">AI roadmapa Metady</div>
+        <div class="roadmap-phases">
+          <div class="roadmap-phase">
+            <div class="roadmap-phase-header">
+              <div class="roadmap-horizon" data-i18n="ai.roadmap.h1">0–6 měsíců</div>
+            </div>
+            <div class="roadmap-items">
+              <div class="roadmap-item" data-i18n="ai.roadmap.i1a">AI-asistované modelování</div>
+              <div class="roadmap-item" data-i18n="ai.roadmap.i1b">AI quality check</div>
+            </div>
+          </div>
+          <div class="roadmap-phase">
+            <div class="roadmap-phase-header">
+              <div class="roadmap-horizon" data-i18n="ai.roadmap.h2">6–12 měsíců</div>
+            </div>
+            <div class="roadmap-items">
+              <div class="roadmap-item" data-i18n="ai.roadmap.i2a">AI-generované integrace</div>
+              <div class="roadmap-item" data-i18n="ai.roadmap.i2b">Inteligentní migrace dat</div>
+            </div>
+          </div>
+          <div class="roadmap-phase">
+            <div class="roadmap-phase-header">
+              <div class="roadmap-horizon" data-i18n="ai.roadmap.h3">12+ měsíců</div>
+            </div>
+            <div class="roadmap-items">
+              <div class="roadmap-item" data-i18n="ai.roadmap.i3a">AI copilot pro business analytiky</div>
+              <div class="roadmap-item" data-i18n="ai.roadmap.i3b">Autonomní modelování procesů</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 6: REFERENCE ===== -->
+<section class="section section-gray" id="references">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-label" data-i18n="refs.label">REFERENCE</span>
+      <div class="section-divider"></div>
+      <h2 class="section-title" data-i18n="refs.title">Důvěřují nám</h2>
+      <p class="section-subtitle mx-auto mt-4" data-i18n="refs.subtitle">
+        Partneři, kteří staví na Metada platformě, a use cases z reálných implementací.
+      </p>
+    </div>
+
+    <!-- Partners -->
+    <h3 class="text-center text-sm font-semibold uppercase tracking-widest text-gray-400 mt-12 mb-4" data-i18n="refs.partners.title">Partneři</h3>
+    <div class="partners-strip" data-aos="fade-up" data-aos-delay="100">
+      <div class="partner-badge"><span class="dot"></span>TipIT</div>
+      <div class="partner-badge"><span class="dot"></span>Goodea</div>
+      <div class="partner-badge"><span class="dot"></span>Operátor ICT</div>
+      <div class="partner-badge"><span class="dot"></span>Hlavní město Praha</div>
+      <div class="partner-badge"><span class="dot"></span>Czech Wealthtech Assoc.</div>
+    </div>
+
+    <!-- Use Cases -->
+    <h3 class="text-center text-sm font-semibold uppercase tracking-widest text-gray-400 mb-6" data-i18n="refs.cases.title">Ukázky implementací</h3>
+    <div class="cases-grid" data-aos="fade-up" data-aos-delay="150">
+      <div class="case-card">
+        <div class="case-tag" data-i18n="refs.case1.tag">Komunikace</div>
+        <h3 data-i18n="refs.case1.title">CommHub</h3>
+        <p data-i18n="refs.case1.text">Centrální platforma pro řízení zákaznické komunikace napříč kanály.</p>
+      </div>
+      <div class="case-card">
+        <div class="case-tag" data-i18n="refs.case2.tag">Veřejná správa</div>
+        <h3 data-i18n="refs.case2.title">Portál pražana</h3>
+        <p data-i18n="refs.case2.text">Digitální portál pro občany hlavního města Prahy s integrací na státní eGov systémy.</p>
+      </div>
+      <div class="case-card">
+        <div class="case-tag" data-i18n="refs.case3.tag">Bankovnictví</div>
+        <h3 data-i18n="refs.case3.title">Bankovní procesy</h3>
+        <p data-i18n="refs.case3.text">Úvěrové kalkulačky, produktové katalogy, spotřebitelské úvěry a KYC procesy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 7: PROČ METADA ===== -->
+<section class="section section-dark" id="why">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-label" data-i18n="why.label">PROČ METADA</span>
+      <div class="section-divider"></div>
+      <h2 class="section-title" data-i18n="why.title">Pět důvodů, proč si instituce vybírají Metadu</h2>
+    </div>
+
+    <div class="diff-grid mt-12" data-aos="fade-up" data-aos-delay="100">
+      <div class="diff-card">
+        <div class="diff-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div>
+          <h3 data-i18n="why.d1.title">Model, ne kód</h3>
+          <p data-i18n="why.d1.text">Aplikace je meta-model, ne generovaný kód. Konzistentní, auditovatelná, změnitelná bez technického dluhu.</p>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+        </div>
+        <div>
+          <h3 data-i18n="why.d2.title">On-premise & hybrid</h3>
+          <p data-i18n="why.d2.text">V regulovaných odvětvích je on-premise často povinný. Metada to umí přirozeně — bez kompromisů.</p>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <h3 data-i18n="why.d3.title">Audit trail nativně</h3>
+          <p data-i18n="why.d3.text">Každá akce, každá změna, každý přístup — logováno automaticky, připraveno pro regulatorní audit.</p>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        </div>
+        <div>
+          <h3 data-i18n="why.d4.title">Nezávislost</h3>
+          <p data-i18n="why.d4.text">Žádná vazba na Microsoft, Siemens, Salesforce. Model patří zákazníkovi. Vždy.</p>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div>
+          <h3 data-i18n="why.d5.title">End-to-end</h3>
+          <p data-i18n="why.d5.text">Celý stack v jednom prostředí: datový model, logika, workflow, UI, integrace, reporting.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 8: PRIORITNÍ VERTIKÁLY ===== -->
+<section class="section" id="verticals">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-label" data-i18n="verticals.label">PRIORITNÍ VERTIKÁLY</span>
+      <div class="section-divider"></div>
+      <h2 class="section-title" data-i18n="verticals.title">Kde začít</h2>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs-nav" data-aos="fade-up" data-aos-delay="100">
+      <button class="tab-btn active" data-tab="bank" data-i18n="verticals.tab.bank">MetadaBank</button>
+      <button class="tab-btn" data-tab="gov" data-i18n="verticals.tab.gov">MetadaGov</button>
+      <button class="tab-btn" data-tab="compliance" data-i18n="verticals.tab.compliance">MetadaCompliance</button>
+    </div>
+
+    <!-- Bank Panel -->
+    <div class="tab-panel active" id="tab-bank">
+      <div class="tab-modules">
+        <h4 data-i18n="verticals.modules.title">Klíčové moduly</h4>
+        <ul class="modules-list">
+          <li data-i18n="vert.bank.m1">KYC / Client Onboarding</li>
+          <li data-i18n="vert.bank.m2">Úvěrový proces end-to-end</li>
+          <li data-i18n="vert.bank.m3">AML Monitoring & SAR reporting</li>
+          <li data-i18n="vert.bank.m4">Produktový katalog</li>
+          <li data-i18n="vert.bank.m5">Klientský profil 360°</li>
+          <li data-i18n="vert.bank.m6">Schvalovací workflow engine</li>
+          <li data-i18n="vert.bank.m7">Regulatorní reporting ČNB/ECB</li>
+        </ul>
+      </div>
+      <div>
+        <div class="tab-quickwins">
+          <h4 data-i18n="verticals.quickwins.title">Quick wins (týdny, ne měsíce)</h4>
+          <ul class="quickwins-list">
+            <li data-i18n="vert.bank.qw1">Reklamační proces — 2–3 týdny</li>
+            <li data-i18n="vert.bank.qw2">Interní schvalovací procesy — 2 týdny</li>
+            <li data-i18n="vert.bank.qw3">Client complaint management — 2–3 týdny</li>
+          </ul>
+        </div>
+        <div class="tab-target-label">
+          <h4 data-i18n="verticals.target.title">Cílový zákazník</h4>
+          <div class="target-chip" data-i18n="vert.bank.target">Střední banky, spořitelny, fintechy</div>
+        </div>
+        <a href="https://radvamic.github.io/metadabank" target="_blank" class="tab-cta-link" data-i18n="verticals.cta.bank">Více o MetadaBank →</a>
+      </div>
+    </div>
+
+    <!-- Gov Panel -->
+    <div class="tab-panel" id="tab-gov">
+      <div class="tab-modules">
+        <h4 data-i18n="verticals.modules.title">Klíčové moduly</h4>
+        <ul class="modules-list">
+          <li data-i18n="vert.gov.m1">Správa životních situací</li>
+          <li data-i18n="vert.gov.m2">Spisová služba (NSESSS)</li>
+          <li data-i18n="vert.gov.m3">Dotační management</li>
+          <li data-i18n="vert.gov.m4">Registry a evidence</li>
+          <li data-i18n="vert.gov.m5">Portál občana</li>
+          <li data-i18n="vert.gov.m6">Workflow interních procesů</li>
+          <li data-i18n="vert.gov.m7">Integrace eGov (datové schránky, ISZR)</li>
+        </ul>
+      </div>
+      <div>
+        <div class="tab-quickwins">
+          <h4 data-i18n="verticals.quickwins.title">Quick wins (týdny, ne měsíce)</h4>
+          <ul class="quickwins-list">
+            <li data-i18n="vert.gov.qw1">Evidence a řízení smluv — 2–3 týdny</li>
+            <li data-i18n="vert.gov.qw2">Elektronické formuláře pro občany — 2 týdny</li>
+            <li data-i18n="vert.gov.qw3">Sledování úkolů z porad vedení — 1–2 týdny</li>
+          </ul>
+        </div>
+        <div class="tab-target-label">
+          <h4 data-i18n="verticals.target.title">Cílový zákazník</h4>
+          <div class="target-chip" data-i18n="vert.gov.target">Regionální úřady, ministerstva, státní agentury</div>
+        </div>
+        <a href="#contact" class="tab-cta-link" data-i18n="verticals.cta.gov">Více o MetadaGov →</a>
+      </div>
+    </div>
+
+    <!-- Compliance Panel -->
+    <div class="tab-panel" id="tab-compliance">
+      <div class="tab-modules">
+        <h4 data-i18n="verticals.modules.title">Klíčové moduly</h4>
+        <ul class="modules-list">
+          <li data-i18n="vert.comp.m1">Registr regulatorních požadavků</li>
+          <li data-i18n="vert.comp.m2">Risk assessment</li>
+          <li data-i18n="vert.comp.m3">Evidence kontrol</li>
+          <li data-i18n="vert.comp.m4">Workflow pro compliance úkoly</li>
+          <li data-i18n="vert.comp.m5">Incident management</li>
+          <li data-i18n="vert.comp.m6">Audit trail</li>
+          <li data-i18n="vert.comp.m7">Reporting & dashboardy (KRI)</li>
+        </ul>
+      </div>
+      <div>
+        <div class="tab-quickwins">
+          <h4 data-i18n="verticals.quickwins.title">Quick wins (týdny, ne měsíce)</h4>
+          <ul class="quickwins-list">
+            <li data-i18n="vert.comp.qw1">GDPR registr zpracování — 1–2 týdny</li>
+            <li data-i18n="vert.comp.qw2">NIS2 / DORA self-assessment — 2–3 týdny</li>
+            <li data-i18n="vert.comp.qw3">Plán kontrol s tracking plnění — 2 týdny</li>
+          </ul>
+        </div>
+        <div class="tab-target-label">
+          <h4 data-i18n="verticals.target.title">Cílový zákazník</h4>
+          <div class="target-chip" data-i18n="vert.comp.target">Banky, pojišťovny, farmacie, energetika</div>
+        </div>
+        <a href="#contact" class="tab-cta-link" data-i18n="verticals.cta.compliance">Více o MetadaCompliance →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== SECTION 9: CÍLOVÝ ZÁKAZNÍK ===== -->
+<section class="section section-gray" id="target">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-label" data-i18n="target.label">PRO KOHO</span>
+      <div class="section-divider"></div>
+      <h2 class="section-title" data-i18n="target.title">Kdo si vybírá Metadu</h2>
+    </div>
+
+    <div class="target-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="target-card">
+        <div class="target-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20M4 20V10l8-6 8 6v10M10 20v-5h4v5"/></svg>
+        </div>
+        <h3 data-i18n="target.c1.title">Střední banky a spořitelny</h3>
+        <p data-i18n="target.c1.text">Hledají alternativu k rigidním core systémům s plnou kontrolou nad procesy.</p>
+      </div>
+      <div class="target-card">
+        <div class="target-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M12 13v9M9 22h6"/><path d="M3 13h18"/></svg>
+        </div>
+        <h3 data-i18n="target.c2.title">Veřejná správa</h3>
+        <p data-i18n="target.c2.text">Úřady, ministerstva a agentury pod tlakem digitalizace a EU fondů.</p>
+      </div>
+      <div class="target-card">
+        <div class="target-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3 data-i18n="target.c3.title">Pojišťovny a fintech</h3>
+        <p data-i18n="target.c3.text">Potřebují rychle vybudovat compliance-ready infrastrukturu s flexibility.</p>
+      </div>
+      <div class="target-card">
+        <div class="target-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+        </div>
+        <h3 data-i18n="target.c4.title">Enterprise s komplexními procesy</h3>
+        <p data-i18n="target.c4.text">Velké firmy, pro které krabicové řešení nestačí a vlastní vývoj je drahý.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 10: TÝM & KONTAKT ===== -->
+<section class="section section-dark" id="contact">
+  <div class="container">
+    <div class="text-center" data-aos="fade-up">
+      <span class="section-label" data-i18n="team.label">TÝM</span>
+      <div class="section-divider"></div>
+      <h2 class="section-title" data-i18n="team.title">Za Metadou stojí lidé</h2>
+    </div>
+
+    <div class="team-grid" data-aos="fade-up" data-aos-delay="100">
+      <div class="team-card">
+        <div class="team-avatar">PS</div>
+        <div class="team-name" data-i18n="team.p1.name">Petr Smolik</div>
+        <div class="team-role" data-i18n="team.p1.role">Zakladatel & CEO</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">PM</div>
+        <div class="team-name" data-i18n="team.p2.name">Petr Majer</div>
+        <div class="team-role" data-i18n="team.p2.role">CSO</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">JK</div>
+        <div class="team-name" data-i18n="team.p3.name">Jan Kobera</div>
+        <div class="team-role" data-i18n="team.p3.role">Model Architect</div>
+      </div>
+    </div>
+
+    <div class="contact-info" data-aos="fade-up" data-aos-delay="200">
+      <p>📍 <span data-i18n="team.address">Hvězdova 1716/2b, Praha 4, Česká republika</span></p>
+      <p>✉️ <a href="mailto:info@metada.com" style="color: var(--blue-accent)">info@metada.com</a></p>
+      <p style="margin-top:0.75rem; font-size:0.8rem; opacity:0.5;" data-i18n="team.founded">Společnost založena 2002</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SECTION 11: CTA ===== -->
+<section class="cta-section">
+  <div class="cta-content container">
+    <h2 class="cta-title" data-aos="fade-up" data-i18n="cta.title">Začněte s Discovery workshopem</h2>
+    <div class="cta-stats" data-aos="fade-up" data-aos-delay="50" data-i18n="cta.stats">10 vertikál · 70 modulů · 1 sdílené jádro</div>
+    <p class="cta-subtitle" data-aos="fade-up" data-aos-delay="100" data-i18n="cta.subtitle">
+      Zmapujeme vaše procesy a ukážeme, jak Metada řeší váš konkrétní problém — bez závazků.
+    </p>
+    <div data-aos="fade-up" data-aos-delay="150">
+      <a href="mailto:info@metada.com" class="btn-primary" data-i18n="cta.button">Domluvit Discovery Workshop</a>
+      <br>
+      <a href="mailto:info@metada.com" class="cta-email" data-i18n="cta.email">info@metada.com</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <img src="assets/images/logos/logo-horizontal-white.png" alt="Metada">
+      <p data-i18n="footer.tagline">Enterprise no-code pro regulované prostředí.</p>
+      <p style="margin-top:0.5rem; font-size:0.78rem;" data-i18n="footer.address">Hvězdova 1716/2b, Praha 4</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.products">Produkty</h4>
+      <ul>
+        <li><a href="#products">MetadaBank</a></li>
+        <li><a href="#products">MetadaGov</a></li>
+        <li><a href="#products">MetadaCompliance</a></li>
+        <li><a href="#products">MetadaInsurance</a></li>
+        <li><a href="#products">MetadaHR</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4 data-i18n="footer.company">Společnost</h4>
+      <ul>
+        <li><a href="#about" data-i18n="footer.company.about">O Metadě</a></li>
+        <li><a href="#contact" data-i18n="footer.company.team">Tým</a></li>
+        <li><a href="#contact" data-i18n="footer.company.contact">Kontakt</a></li>
+        <li><a href="https://radvamic.github.io/metadabank" target="_blank">MetadaBank LP</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span data-i18n="footer.rights">© 2025 Metada s.r.o. Všechna práva vyhrazena.</span>
+    <span>metada.com</span>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/i18n.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
